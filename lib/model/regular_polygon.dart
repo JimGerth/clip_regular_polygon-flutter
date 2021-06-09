@@ -1,52 +1,70 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:clip_regular_polygon/model/corner.dart';
+
+// Export the Corner type to users of the RegularPolygon
+// class, as it is needed for a constructor argument.
+export 'package:clip_regular_polygon/model/corner.dart';
+
 // TODO: Add comment.
 class RegularPolygon {
   /// Create a new [RegularPolygon].
   RegularPolygon({
     required this.sides,
     num? rotation,
-  }) : rotation = (rotation ?? 0 % 360).toDouble();
+    Corner? corners,
+  })  : rotation = (rotation ?? 0 % 360).toDouble(),
+        corners = corners ?? Corner();
 
   /// Create a [RegularPolygon] with three sides.
   RegularPolygon.triangle({
     num? rotation,
+    Corner? corners,
   }) : this(
           sides: 3,
           rotation: rotation,
+          corners: corners,
         );
 
   /// Create a [RegularPolygon] with four sides.
   RegularPolygon.square({
     num? rotation,
+    Corner? corners,
   }) : this(
           sides: 4,
           rotation: rotation,
+          corners: corners,
         );
 
   /// Create a [RegularPolygon] with five sides.
   RegularPolygon.pentagon({
     num? rotation,
+    Corner? corners,
   }) : this(
           sides: 5,
           rotation: rotation,
+          corners: corners,
         );
 
   /// Create a [RegularPolygon] with six sides.
   RegularPolygon.hexagon({
     num? rotation,
+    Corner? corners,
   }) : this(
           sides: 6,
           rotation: rotation,
+          corners: corners,
         );
 
   /// Create a [RegularPolygon] with eight sides.
   RegularPolygon.octagon({
     num? rotation,
+    Corner? corners,
   }) : this(
           sides: 8,
           rotation: rotation,
+          corners: corners,
         );
 
   /// The numer of sides of the polygon.
@@ -62,6 +80,11 @@ class RegularPolygon {
   /// The polygon is rotated [rotation] degrees
   /// around its center counterclockwise.
   final double rotation;
+
+  /// The corners of the polygon.
+  ///
+  /// See the [Corner] class for more.
+  final Corner corners;
 
   /// The angle between two sides of the polygon.
   double get innerAngle => 360 / sides;
