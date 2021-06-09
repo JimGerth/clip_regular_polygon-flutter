@@ -43,6 +43,39 @@ class Corner {
   })  : shape = shape ?? CornerShape.sharp,
         radius = (radius ?? 0).toDouble().clamp(0, 1);
 
+  /// Create a new sharp corner.
+  Corner.sharp()
+      : this(
+          shape: CornerShapae.sharp,
+        );
+
+  /// Create a new beveled corner.
+  Corner.bevel(num radius)
+      : this(
+          shape: CornerShape.bevel,
+          radius: radius,
+        );
+
+  /// Create a new rounded corner.
+  Corner.round(num radius)
+      : this(
+          shape: CornerShape.round,
+          radius: radius,
+        );
+
+  /// Create a new filleted corner.
+  Corner.fillet(num radius)
+      : this(
+          shape: CornerShape.fillet,
+          radius: radius,
+        );
+
+  /// Create a new inset corner.
+  Corner.inset()
+      : this(
+          shape: CornerShape.inset,
+        );
+
   /// The shape of the corner.
   ///
   /// See [CornerShape] for more.
