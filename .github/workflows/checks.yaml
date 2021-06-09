@@ -1,0 +1,43 @@
+name: Source Code Checks
+
+on:
+  push:
+    branches:
+    - master
+    - feature/*
+    - fix/*
+
+  pull_request:
+    branches:
+    - master
+
+  # Enable manually running this workflow.
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze source code
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+
+      - name: Check code formatting
+        run: flutter format . --set-exit-if-changed
