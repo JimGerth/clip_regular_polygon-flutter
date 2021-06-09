@@ -8,6 +8,46 @@ class RegularPolygon {
     num? rotation,
   }) : rotation = (rotation ?? 0 % 360).toDouble();
 
+  /// Create a [RegularPolygon] with three sides.
+  RegularPolygon.triangle({
+    num? rotation,
+  }) : this(
+          sides: 3,
+          rotation: rotation,
+        );
+
+  /// Create a [RegularPolygon] with four sides.
+  RegularPolygon.square({
+    num? rotation,
+  }) : this(
+          sides: 4,
+          rotation: rotation,
+        );
+
+  /// Create a [RegularPolygon] with five sides.
+  RegularPolygon.pentagon({
+    num? rotation,
+  }) : this(
+          sides: 5,
+          rotation: rotation,
+        );
+
+  /// Create a [RegularPolygon] with six sides.
+  RegularPolygon.hexagon({
+    num? rotation,
+  }) : this(
+          sides: 6,
+          rotation: rotation,
+        );
+
+  /// Create a [RegularPolygon] with eight sides.
+  RegularPolygon.octagon({
+    num? rotation,
+  }) : this(
+          sides: 8,
+          rotation: rotation,
+        );
+
   /// The numer of sides of the polygon.
   ///
   /// As this class represents regular polygons, the
