@@ -24,11 +24,8 @@ jobs:
         with:
           channel: stable
 
-      - name: Install dependencies
-        run: flutter pub get
-
       - name: Analyze source code
-        run: flutter analyze --fatal-infos --fatal-warnings
+        run: flutter analyze --pub --fatal-infos --fatal-warnings
 
   format:
     runs-on: ubuntu-latest
