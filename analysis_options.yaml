@@ -1,1 +1,9 @@
 include: package:lint/analysis_options_package.yaml
+
+linter:
+  rules:
+    - public_member_api_docs
+    - lines_longer_than_80_chars
+    - always_specify_types
+    - prefer_single_quotes
+    - sort_constructors_first
