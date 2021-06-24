@@ -2,7 +2,7 @@ name: clip_regular_polygon
 description: Exposes functionality to clip any widget into the shape of any regular polygon, with some extra options.
 repository: https://github.com/JimGerth/clip_regular_polygon-flutter
 issue_tracker: https://github.com/JimGerth/clip_regular_polygon-flutter/issues
-version: 0.1.0
+version: 0.2.0
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
